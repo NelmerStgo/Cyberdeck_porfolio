@@ -1,0 +1,16 @@
+.tabsContainer {
+    display: flex;
+    gap: var(--spacing-sm);
+    border-bottom: 1px solid var(--neon-cyan);
+    padding-bottom: var(--spacing-xs);
+}
+
+.tabButton {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+}

@@ -1,0 +1,187 @@
+.contentPanel {
+    background-color: rgba(5, 5, 8, 0.7);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    height: 100%;
+    padding: var(--spacing-lg);
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    overflow-y: auto;
+}
+
+.contentPanel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(255, 0, 200, 0.3);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    pointer-events: none;
+}
+
+.sectionTitle {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--neon-yellow);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: var(--neon-yellow);
+    box-shadow: 0 0 8px var(--neon-yellow);
+}
+
+.contactContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    height: 100%;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: rgba(10, 10, 18, 0.5);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.contactIcon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 243, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+    font-size: 1.2rem;
+}
+
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactLabel {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contactLink {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contactLink:hover {
+    text-shadow: 0 0 8px var(--neon-cyan);
+    color: var(--neon-cyan);
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.formLabel {
+    color: var(--neon-yellow);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formInput,
+.formTextarea {
+    background-color: rgba(10, 10, 18, 0.8);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    color: var(--text-primary);
+    padding: var(--spacing-sm);
+    font-family: var(--font-primary);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.3s ease;
+    resize: vertical;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.formTextarea {
+    min-height: 120px;
+}
+
+.submitButton {
+    align-self: flex-start;
+    margin-top: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .panelHeader {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .panelStatus {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+
+    .projectsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .contentPanel {
+        padding: var(--spacing-sm);
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+
+    .panelStatus {
+        font-size: 0.7rem;
+    }
+}
