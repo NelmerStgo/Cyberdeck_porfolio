@@ -4,12 +4,46 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: var(--bg-darker);
   min-width: 100vw;
   min-height: 100vh;
 }
 
-.cyberdeckBackground {
+/* .cyberpunkBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a0000 0%, #1a0025 25%, #0a0035 50%, #000515 75%, #000000 100%);
+  z-index: -1;
+}
+
+.cyberpunkBg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, #ff003c15 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #0011ff10 0%, transparent 50%);
+  animation: pulse 8s ease-in-out infinite;
+}
+ */
+/* @keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+} */
+
+/* .cyberdeckBackground {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,13 +55,14 @@
     radial-gradient(circle at 40% 40%, rgba(255, 0, 60, 0.05) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
-}
+} */
 
 .mainContainer {
   display: flex;
   flex: 1;
   overflow: hidden;
   min-height: 0;
+
 }
 
 .header {

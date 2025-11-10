@@ -7,12 +7,12 @@ import Projects from './Content/Projects';
 import Skills from './Content/Skills';
 import Contact from './Content/Contact';
 import Scanlines from '../UI/Layout/Scanlines';
-import Noise from '../UI/Layout/Noise';
 import styles from './Cyberdeck.module.css';
-/* import Particles from '../UI/Layout/Particles'; */
+
 
 const Cyberdeck: React.FC = () => {
     const [activeTab, setActiveTab] = useState<Tab>('projects');
+
 
     const renderContent = () => {
         switch (activeTab) {
@@ -30,9 +30,6 @@ const Cyberdeck: React.FC = () => {
     return (
         <div className={styles.cyberdeck}>
             <Scanlines />
-            <Noise />
-            {/* <Particles /> */}
-            <div className={styles.cyberdeckBackground} />
 
             <CyberdeckHeader />
 

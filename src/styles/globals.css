@@ -15,11 +15,18 @@ body {
 }
 
 body {
-    background-color: var(--bg-dark);
     color: var(--text-primary);
     font-family: var(--font-primary);
     position: relative;
     height: 100vh;
+    margin: 0;
+    /* FONDO CYBERPUNK PARA TODA LA PÁGINA */
+    background: 
+        radial-gradient(ellipse at top, #ff003c20 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, #0011ff10 0%, transparent 50%),
+        linear-gradient(180deg, #1a0000 0%, #0a0015 50%, #000000 100%);
+    background-blend-mode: screen;
+    background-attachment: fixed;
 }
 
 #root {

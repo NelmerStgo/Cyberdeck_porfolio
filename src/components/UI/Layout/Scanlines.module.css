@@ -10,7 +10,7 @@
     background-size: 100% 3px;
     pointer-events: none;
     z-index: 100;
-    opacity: 0.4;
+    opacity: 0.3;
     animation: scanlineMove 20s linear infinite;
 }
 

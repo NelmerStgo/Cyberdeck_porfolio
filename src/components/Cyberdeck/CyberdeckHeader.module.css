@@ -1,9 +1,11 @@
 .cyberdeckHeader {
     background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
-    border-bottom: 2px solid var(--neon-cyan);
+    border-bottom: 2px solid var(--red);
     padding: var(--spacing-md);
     position: relative;
     overflow: hidden;
+    background: transparent;
+    backdrop-filter: blur(5px); /* Opcional: efecto glassmorphism */
 }
 
 .cyberdeckHeader::before {
@@ -13,7 +15,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
     animation: scanline 2s linear infinite;
 }
 
@@ -27,6 +29,7 @@
     }
 }
 
+/* Barra del terminal */
 .terminalBar {
     display: flex;
     justify-content: space-between;
@@ -34,17 +37,99 @@
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-xs);
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--neon-cyan);
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    border: 1px solid var(--red);
 }
 
+/* Titulo */
 .terminalTitle {
     font-family: var(--font-heading);
     font-size: 0.9rem;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 10px var(--neon-cyan);
+    color: var(--red);
+    text-shadow: 0 0 10px var(--red);
 }
 
+.terminalTitle span {
+    position: relative;
+}
+
+.terminalTitle span::before,
+.terminalTitle span::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.terminalTitle span::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--neon-red);
+    clip-path: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.terminalTitle span::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--neon-yellow);
+    clip-path: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip: rect(20px, 9999px, 55px, 0);
+    }
+
+    20% {
+        clip: rect(45px, 9999px, 85px, 0);
+    }
+
+    40% {
+        clip: rect(10px, 9999px, 95px, 0);
+    }
+
+    60% {
+        clip: rect(75px, 9999px, 25px, 0);
+    }
+
+    80% {
+        clip: rect(35px, 9999px, 65px, 0);
+    }
+
+    100% {
+        clip: rect(15px, 9999px, 45px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(85px, 9999px, 40px, 0);
+    }
+
+    20% {
+        clip: rect(25px, 9999px, 70px, 0);
+    }
+
+    40% {
+        clip: rect(55px, 9999px, 30px, 0);
+    }
+
+    60% {
+        clip: rect(15px, 9999px, 90px, 0);
+    }
+
+    80% {
+        clip: rect(65px, 9999px, 35px, 0);
+    }
+
+    100% {
+        clip: rect(45px, 9999px, 75px, 0);
+    }
+}
+
+/* Estado del terminal */
 .terminalStatus {
     font-family: var(--font-primary);
     color: var(--text-terminal);
@@ -53,6 +138,7 @@
     gap: var(--spacing-xs);
 }
 
+/* Información del sistema */
 .systemInfo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -62,24 +148,27 @@
     font-size: 0.8rem;
 }
 
+/* Fila de información del sistema */
 .systemRow {
     display: flex;
     justify-content: space-between;
     padding: 2px var(--spacing-xs);
-    background: rgba(0, 255, 255, 0.05);
+    background: rgba(247, 80, 73, 0.05);
 }
 
 .neonText {
-    color: var(--neon-yellow);
-    text-shadow: 0 0 5px var(--neon-yellow);
+    color: var(--cyan);
+    text-shadow: 0 0 5px var(--cyan);
 }
 
+/* Advertencia en la fecha */
 .warning {
-    color: var(--neon-red);
-    text-shadow: 0 0 5px var(--neon-red);
+    color: var(--red);
+    text-shadow: 0 0 5px var(--red);
     animation: pulse 2s infinite;
 }
 
+/* Revisar esta animaciondespues ------------------------ */
 @keyframes pulse {
 
     0%,
@@ -92,6 +181,7 @@
     }
 }
 
+/* Barra de datos binarios */
 .binaryStream {
     font-family: var(--font-terminal);
     color: var(--text-terminal);
@@ -100,21 +190,21 @@
     margin-bottom: var(--spacing-sm);
     background: rgba(0, 0, 0, 0.3);
     padding: var(--spacing-xs);
-    border: 1px solid rgba(0, 255, 65, 0.3);
+    border: 1px solid rgba(29, 237, 131, 0.3);
 }
 
+/* Alerta */
 .alert {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-xs);
-    background: rgba(255, 0, 60, 0.1);
-    border: 1px solid var(--neon-red);
-    color: var(--neon-red);
+    background: rgba(247, 80, 73, 0.1);
+    border: 1px solid var(--red);
+    color: var(--red);
     font-family: var(--font-primary);
     font-size: 0.8rem;
-    clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 }
 
 .alertIcon {
@@ -141,6 +231,31 @@
 
 .blink {
     animation: blink 1s step-end infinite;
+}
+
+/* Contenedor para la barra de scanning */
+.scanningContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    width: 100%;
+}
+
+/* La barra contenedora exterior */
+.progressBar {
+    flex-grow: 1;
+    height: 8px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--neon-cyan);
+    overflow: visible;
+    /* Importante para que la barra interior no se salga */
+}
+
+/* La barra interior que se anima */
+.progressBarInner {
+    height: 100%;
+    background: var(--neon-yellow);
+    box-shadow: 0 0 8px var(--neon-yellow);
 }
 
 /* Responsive */
