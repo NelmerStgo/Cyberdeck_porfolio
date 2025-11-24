@@ -101,13 +101,18 @@ Para ejecutar una copia local del proyecto:
 ---
 
 ## Screenshots
+
 A continuación se presentan capturas de pantalla de las secciones principales de la interfaz.
 
-<img src="/src/assets/img/screenshots/cyberdeck_projects.webp" width="100%" alt="Projects Screen">
-<br>
-<img src="/src/assets/img/screenshots/cyberdeck_skills.webp" width="100%" alt="Skills Screen">
-<br>
-<img src="/src/assets/img/screenshots/cyberdeck_contact.webp" width="100%" alt="Contact Screen">
+<details>
+  <summary><strong>Ver Interfaz del Cyberdeck</strong></summary>
+  <br>
+  <img src="src/assets/img/screenshots/cyberdeck_projects.webp" width="100%" alt="Pantalla de Proyectos">
+  <br><br>
+  <img src="src/assets/img/screenshots/cyberdeck_skills.webp" width="100%" alt="Pantalla de Habilidades">
+  <br><br>
+  <img src="src/assets/img/screenshots/cyberdeck_contact.webp" width="100%" alt="Pantalla de Contacto">
+</details>
 
 ---
 
