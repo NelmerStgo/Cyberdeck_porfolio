@@ -145,5 +145,5 @@ Este proyecto está en desarrollo, no es su version final, la información dentr
 **Nota:** Este proyecto es una recreación inspirada en el diseño y estética de Cyberpunk 2077 y está destinado únicamente para **fines educativos y de portafolio**.
 
 <div align="center">
-  <img src="src/assets/img/screenshots/samurai-icon.png" width="150" alt="Samurai Logo">
+  <img src="src/assets/img/screenshots/samurai2.gif" width="150" alt="Samurai Logo">
 </div>
