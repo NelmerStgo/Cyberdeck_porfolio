@@ -105,7 +105,7 @@ Para ejecutar una copia local del proyecto:
 A continuación se presentan capturas de pantalla de las secciones principales de la interfaz.
 
 <details>
-  <summary><strong>Ver Interfaz del Cyberdeck</strong></summary>
+  <summary><strong>🧿 Ver Interfaz del Cyberdeck</strong></summary>
   <br>
   <img src="src/assets/img/screenshots/cyberdeck_projects.webp" width="100%" alt="Pantalla de Proyectos">
   <br><br>
@@ -118,7 +118,7 @@ A continuación se presentan capturas de pantalla de las secciones principales d
 
 ## Personalización
 
-Puedes personalizar fácilmente el contenido y la estética:
+Se puede personalizar fácilmente el contenido y la estética:
 
 * **Contenido:** Actualiza la información en los componentes de las secciones (`src/components/Cyberdeck/Content/`). Si usas datos *mock* para el perfil, actualiza el archivo de configuración correspondiente.
 * **Estilos y Colores:** Modifica las variables CSS en `src/styles/variables.css` para cambiar la paleta principal. Los estilos específicos por componente se encuentran en sus respectivos archivos `*.module.css`.
@@ -143,3 +143,8 @@ Puedes personalizar fácilmente el contenido y la estética:
 Este proyecto está en desarrollo, no es su version final, la información dentro del proyecto es ficticia (temporalmente).
 
 **Nota:** Este proyecto es una recreación inspirada en el diseño y estética de Cyberpunk 2077 y está destinado únicamente para **fines educativos y de portafolio**.
+
+<div align="center">
+  <br>
+  <img src="src/assets/img/screenshots/samurai-icon.png" width="80" alt="Samurai Logo">
+</div>
