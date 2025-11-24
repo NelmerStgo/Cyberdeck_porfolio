@@ -101,10 +101,13 @@ Para ejecutar una copia local del proyecto:
 ---
 
 ## Screenshots
+A continuación se presentan capturas de pantalla de las secciones principales de la interfaz.
 
-| Pantalla de Proyectos | Pantalla de Habilidades | Pantalla de Contacto |
-| :---: | :---: | :---: |
-| <img src="/src/assets/img/screenshots/cyberdeck_projects.webp" width="300" alt="Vista de la sección de Proyectos"> | <img src="/src/assets/img/screenshots/cyberdeck_skills.webp" width="300" alt="Vista de la sección de Habilidades"> | <img src="/src/assets/img/screenshots/cyberdeck_contact.webp" width="300" alt="Vista de la sección de Contacto"> |
+<img src="assets/screenshots/1_ProjectsScreen.webp" width="100%" alt="Projects Screen">
+<br>
+<img src="assets/screenshots/2_SkillsScreen.webp" width="100%" alt="Skills Screen">
+<br>
+<img src="assets/screenshots/3_ContactScreen.webp" width="100%" alt="Contact Screen">
 
 ---
 
