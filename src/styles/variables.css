@@ -48,4 +48,22 @@
   /* Effects */
   --glow-intensity: 0.8;
   --border-intensity: 0.8;
+
+  /* --- Temporal, solo para el userInfoComponent --- */
+  /* colores "neón" usados en el modal */
+  --neon-cyan: var(--accent-cyan);
+  --neon-green: var(--accent-green);
+  /* color rosa/acento solicitado (mantengo tu paleta pero añadí esta alias con #ff003c) */
+  --accent-pink: #ff003c;
+  /* fondo base para gradientes del modal */
+  --bg-1: var(--bg-dark);
+  --bg-2: var(--bg-card);
+  /* panel y cartas */
+  --panel-bg: rgba(0, 0, 0, 0.45);
+  /* alias de texto secundario más legible en algunos componentes */
+  --text-primary-contrast: #d7d7df;
+
+  /* utilidades */
+  --neon-cyan-rgb: 0, 243, 255;
+  --focus-ring: 0 0 10px rgba(255, 0, 60, 0.12);
 }

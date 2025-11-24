@@ -1,7 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import { useSound } from '../../../hooks/useSound';
 import styles from './CyberCard.module.css';
+
+import clickSound from '../../../assets/audio/click.wav';
+import hoverSound from '../../../assets/audio/hover.wav';
+
 
 interface CyberCardProps {
     title: string;
@@ -21,12 +25,12 @@ const CyberCard: React.FC<CyberCardProps> = ({
     links,
     delay = 0
 }) => {
-    const { play: playHover } = useSound('/sounds/hover.wav');
-    const { play: playClick } = useSound('/sounds/click.wav');
+    const { play: playHover } = useSound(hoverSound);
+    const { play: playClick } = useSound(clickSound);
 
     const handleLinkClick = (url?: string) => {
         if (url) {
-            playClick();
+            /* playClick(); */
             window.open(url, '_blank', 'noopener,noreferrer');
         }
     };
@@ -36,13 +40,13 @@ const CyberCard: React.FC<CyberCardProps> = ({
             className={styles.projectCard}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay }}
+            transition={{ duration: 0.1, delay }}
             whileHover={{
-                scale: 1.02,
+                scale: 1,
                 y: -5,
-                transition: { duration: 0.2 }
+                transition: { duration: 0.1 }
             }}
-            onMouseEnter={playHover}
+            /* onMouseEnter={playHover} */
         >
             <h3 className={styles.projectTitle}>{title}</h3>
             <p className={styles.projectDescription}>{description}</p>
@@ -61,7 +65,7 @@ const CyberCard: React.FC<CyberCardProps> = ({
                         <button
                             className={styles.linkButton}
                             onClick={() => handleLinkClick(links.github)}
-                            onMouseEnter={playHover}
+                            /* onMouseEnter={playHover} */
                         >
                             GitHub
                         </button>
@@ -70,7 +74,7 @@ const CyberCard: React.FC<CyberCardProps> = ({
                         <button
                             className={styles.linkButton}
                             onClick={() => handleLinkClick(links.live)}
-                            onMouseEnter={playHover}
+                            /* onMouseEnter={playHover} */
                         >
                             Live Demo
                         </button>

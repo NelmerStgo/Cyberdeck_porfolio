@@ -35,26 +35,26 @@ const Contact: React.FC = () => {
         {
             icon: '✉',
             label: 'Email',
-            value: 'tu.email@dominio.com',
-            link: 'mailto:tu.email@dominio.com'
+            value: 'nelmerstgopadron@gmail.com',
+            link: 'mailto:nelmerstgopadron@gmail.com'
         },
         {
             icon: '🔗',
             label: 'GitHub',
-            value: 'github.com/tuusuario',
-            link: 'https://github.com/tuusuario'
+            value: 'github.com/NelmerStgo',
+            link: 'https://github.com/NelmerStgo'
         },
         {
             icon: '💼',
             label: 'LinkedIn',
-            value: 'linkedin.com/in/tuusuario',
-            link: 'https://linkedin.com/in/tuusuario'
+            value: 'linkedin.com/in/nelmer-santiago-padron/',
+            link: 'https://www.linkedin.com/in/nelmer-santiago-padron/'
         },
         {
             icon: '📱',
             label: 'Teléfono',
-            value: '+34 123 456 789',
-            link: 'tel:+34123456789'
+            value: '+52 951 110 9070',
+            link: 'tel:+529511109070'
         }
     ];
 

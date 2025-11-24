@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Tab } from '../../types/cyberdeck';
 import { useSound } from '../../hooks/useSound';
+import BreachProtocolModal from './UserInfo/BreachProtocolModal';
 import styles from './NavigationPanel.module.css';
 
 import clickSound from '../../assets/audio/click.wav';
 import hoverSound from '../../assets/audio/hover.wav';
 import enableSound from '../../assets/audio/enable.wav';
+
+import OndaSonidoGif from '../../assets/img/onda_de_sonido.gif';
+/* import OndaSonidoGif_2 from '../../assets/img/onda_de_sonido_2.gif'; */
+import SamuraiIMG from '../../assets/img/samurai.png';
 
 interface NavigationPanelProps {
     activeTab: Tab;
@@ -20,11 +25,12 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
 
     const [isAudioEnabled, setIsAudioEnabled] = useState(false);
     const [showAudioModal, setShowAudioModal] = useState(true);
+    const [showBreachModal, setShowBreachModal] = useState(false);
 
     const navItems = [
-        { id: 'projects' as Tab, label: 'PROTOCOLS', icon: '🔒', description: 'ACCESS PROJECT DATABASE' },
-        { id: 'skills' as Tab, label: 'SYSTEMS', icon: '⚡', description: 'SKILL MATRIX ANALYSIS' },
-        { id: 'contact' as Tab, label: 'NETWORK', icon: '📡', description: 'ESTABLISH CONNECTION' },
+        { id: 'projects' as Tab, label: 'PROJECTS', icon: '🔒', description: 'ACCESS PROJECT DATABASE' },
+        { id: 'skills' as Tab, label: 'SYSTEM', icon: '⚡', description: 'NEURAL CAPABILITY DIAGNOSTICS' },
+        { id: 'contact' as Tab, label: 'DATA LINK', icon: '📡', description: 'ESTABLISH CONNECTION' },
     ];
 
     const handleEnableAudio = () => {
@@ -53,6 +59,8 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
 
     return (
         <>
+            {/* Modal inicial - Audio Enable*/}
+            {/* ESTE MODAL DEBE DE IR EN UN COMPONENTE EXTERNO. */}
             <AnimatePresence>
                 {showAudioModal && (
                     <motion.div
@@ -71,7 +79,9 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
                             exit={{ opacity: 0, scale: 0.8, y: -50 }}
                             transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
                         >
-                            <div className={styles.audioIcon}>🔊</div>
+                            <div className={styles.audioIcon}>
+                                <img src={OndaSonidoGif} alt="onda_de_sonido" />
+                            </div>
                             <h3>EXPERIENCIA INMERSIVA</h3>
                             <p>habilita el audio para efectos sonoros</p>
                             <button
@@ -91,6 +101,12 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
                 )}
             </AnimatePresence>
 
+            {/* Modal de informacion del usuario */}
+            <BreachProtocolModal
+                isOpen={showBreachModal}
+                onClose={() => setShowBreachModal(false)}
+            />
+
             <motion.nav
                 className={styles.navigationPanel}
                 initial={{ opacity: 0, x: -50 }}
@@ -100,7 +116,7 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
                 <div className={styles.navHeader}>
                     <span>NAVIGATION MATRIX</span>
                     <div className={styles.loadingBar}>
-                        <div className={styles.loadingProgress} style={{ width: '104%' }}></div>
+                        <div className={styles.loadingProgress} style={{ width: '100%' }}></div>
                     </div>
                 </div>
 
@@ -114,7 +130,7 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                            whileHover={{ scale: 1.02 }}
+                            /* whileHover={{ scale: 1.02 }} */
                             whileTap={{ scale: 0.98 }}
                         >
                             <div className={styles.navIcon}>{item.icon}</div>
@@ -131,12 +147,26 @@ const NavigationPanel: React.FC<NavigationPanelProps> = ({ activeTab, onTabChang
                     ))}
                 </div>
 
+                {/* Botoon footer */}
                 <div className={styles.navFooter}>
-                    <div className={styles.systemMessage}>
-                        <span>BREADHPROTOCOL 104.0%</span>
-                        <span>ROOT@HARADAN: ~ #</span>
-                    </div>
+                    <motion.div
+                        className={styles.breachTrigger}
+                        onClick={() => setShowBreachModal(true)}
+                        whileHover={{
+                            scale: 1.02,
+                            boxShadow: "0 0 15px var(--cyan)",
+                            cursor: "pointer"
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                    >
+                        <div className={styles.systemMessage}>
+                            <img src={SamuraiIMG} alt="Samurai user logo" />
+                            <span>DATABASE ACCESS</span>
+                            <span>PROFILE: NELMER_SANTIAGO</span>
+                        </div>
+                    </motion.div>
                 </div>
+
             </motion.nav>
         </>
     );

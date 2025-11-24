@@ -46,6 +46,7 @@
     font-size: 0.9rem;
     color: var(--red);
     text-shadow: 0 0 10px var(--red);
+    letter-spacing: 2px;
 }
 
 .terminalTitle span {
@@ -65,14 +66,14 @@
 
 .terminalTitle span::before {
     left: 2px;
-    text-shadow: -1px 0 var(--neon-red);
+    text-shadow: -1px 0 var(--red);
     clip-path: rect(24px, 550px, 90px, 0);
     animation: glitch-anim-1 2s infinite linear alternate-reverse;
 }
 
 .terminalTitle span::after {
     left: -2px;
-    text-shadow: -1px 0 var(--neon-yellow);
+    text-shadow: -1px 0 var(--yellow);
     clip-path: rect(85px, 550px, 140px, 0);
     animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
@@ -134,7 +135,7 @@
     font-family: var(--font-primary);
     color: var(--text-terminal);
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: var(--spacing-xs);
 }
 
@@ -142,20 +143,33 @@
 .systemInfo {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: var(--spacing-xs);
     margin-bottom: var(--spacing-sm);
     font-family: var(--font-primary);
     font-size: 0.8rem;
+    align-items: center;
+
+    grid-auto-rows: 1fr;
+    height: fit-content;
 }
 
 /* Fila de información del sistema */
 .systemRow {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 2px var(--spacing-xs);
     background: rgba(247, 80, 73, 0.05);
+    height: 100%;
+    min-height: 2rem;
 }
 
+.dateStyle {
+    color: var(--cyan);
+}
+
+/* Escaneo texto */
 .neonText {
     color: var(--cyan);
     text-shadow: 0 0 5px var(--cyan);
@@ -195,13 +209,21 @@
 
 /* Alerta */
 .alert {
+
+    width: 100%;
+    min-height: 2rem;
+    box-sizing: border-box;
+    margin: 0;
+
     display: flex;
+    padding: 2px var(--spacing-xs);
+    background: rgba(247, 80, 73, 0.1);
+
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
-    padding: var(--spacing-xs);
-    background: rgba(247, 80, 73, 0.1);
-    border: 1px solid var(--red);
+    
+    /* border: 1px  var(--red); */
     color: var(--red);
     font-family: var(--font-primary);
     font-size: 0.8rem;
@@ -238,7 +260,7 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
-    width: 100%;
+    width: 50%;
 }
 
 /* La barra contenedora exterior */
@@ -254,8 +276,8 @@
 /* La barra interior que se anima */
 .progressBarInner {
     height: 100%;
-    background: var(--neon-yellow);
-    box-shadow: 0 0 8px var(--neon-yellow);
+    background: var(--yellow);
+    box-shadow: 0 0 8px var(--yellow);
 }
 
 /* Responsive */

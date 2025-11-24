@@ -79,9 +79,15 @@ const Projects: React.FC = () => {
                     </span>
                 </motion.h2>
                 <div className={styles.panelStatus}>
-                    <span>ACCESS LEVEL: ADMIN</span>
-                    <span>PROTOCOLS: {projects.length}</span>
-                    <span className={styles.encryption}>ENCRYPTION: ACTIVE</span>
+                    <span>ACCESS LEVEL:
+                        <span className={styles.accessLevel}> ADMIN</span>
+                    </span>
+                    <span>PROTOCOLS: 
+                        <span className={styles.protocolCount}> {projects.length}</span>
+                    </span>
+                    <span>ENCRYPTION:
+                        <span className={styles.encryption}> ACTIVE</span>
+                    </span>
                 </div>
             </div>
 
